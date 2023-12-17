@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  bookmarks-db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=toor
+      - POSTGRES_DB=appdb
+    ports:
+      - "15432:5432"
+
+  bookmarks-backend:
+    build:
+      context: Bookmarks-Backend      # The folder where the Dockerfile is present
+      dockerfile: Dockerfile_Layered    # The name of the Dockerfile
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
+      SPRING_DATASOURCE_URL: jdbc:postgresql://bookmarks-db:5432/appdb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: toor
+    ports:
+      - "18080:8080"
+    restart: always
+    depends_on:
+      - bookmarks-db
