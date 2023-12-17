@@ -19,6 +19,6 @@ public class BookmarkService {
     @Transactional(readOnly = true)
     public BookmarkDTO getAllBookmarks(Integer pageNo, Integer pageSize, String sortBy) {
         Pageable pageable = PageRequest. of(pageNo, pageSize, Sort.by(sortBy));
-        return new BookmarkDTO(repository.findAll(pageable));
+        return new BookmarkDTO(repository.findAllBookmarks(pageable));
     }
 }

@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 public class BookmarkDTO {
 
-    private List<Bookmark> data;
+    private List<BookmarkProjectionDTO> data;
     private long totalElements;
     private int totalPages;
     private int currentPage;
@@ -23,7 +23,7 @@ public class BookmarkDTO {
     private boolean hasNext;
     private boolean hasPrev;
 
-    public BookmarkDTO(Page<Bookmark> page) {
+    public BookmarkDTO(Page<BookmarkProjectionDTO> page) {
         this.data = page.getContent();
         this.totalElements = page.getTotalElements();
         this.totalPages = page.getTotalPages();

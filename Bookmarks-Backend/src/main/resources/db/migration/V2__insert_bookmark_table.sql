@@ -1,3 +1,10 @@
-insert into bookmarks (created_at,title,url) values (CURRENT_TIMESTAMP() ,'Google', 'www.google.com');
-insert into bookmarks (created_at,title,url) values (CURRENT_TIMESTAMP() ,'Google', 'www.google.com');
-insert into bookmarks (created_at,title,url) values (CURRENT_TIMESTAMP() ,'Google', 'www.google.com');
+insert into bookmarks (created_at,title,url) values (CURRENT_TIMESTAMP , 'Google', 'www.google.com');
+insert into bookmarks (created_at,title,url) values (CURRENT_TIMESTAMP , 'Youtube', 'www.youtube.com');
+insert into bookmarks (created_at,title,url) values (CURRENT_TIMESTAMP , 'Golang', 'www.go.dev');
+insert into bookmarks (created_at,title,url) values (CURRENT_TIMESTAMP , 'Spring', 'www.start.spring.io');
+insert into bookmarks (created_at,title,url) values (CURRENT_TIMESTAMP , 'Java', 'www.dev.java');
+insert into bookmarks (created_at,title,url) values (CURRENT_TIMESTAMP , 'Twitter', 'www.twitter.com');
+insert into bookmarks (created_at,title,url) values (CURRENT_TIMESTAMP , 'Instagram', 'www.instagram.com');
+insert into bookmarks (created_at,title,url) values (CURRENT_TIMESTAMP , 'Google News', 'www.news.google.com');
+insert into bookmarks (created_at,title,url) values (CURRENT_TIMESTAMP , 'Leetcode', 'www.leetcode.com');
+insert into bookmarks (created_at,title,url) values (CURRENT_TIMESTAMP , 'Neetcode', 'www.neetcode.io');

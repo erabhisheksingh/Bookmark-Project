@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.0</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com.springboot.demo</groupId>
 	<artifactId>Bookmarks-Backend</artifactId>
@@ -88,12 +88,36 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+<!--					<image>-->
+<!--						<builder>paketobuildpacks/builder-jammy-base</builder>-->
+<!--						<name>bookmark-backend</name>-->
+<!--					</image>-->
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.0</version>
+				<configuration>
+					<from>
+						<image>eclipse-temurin:17-jre-focal</image>
+					</from>
+					<to>
+						<image>bookmark-backend</image>
+						<tags>
+							<tag>latest</tag>
+							<tag>0.0.1</tag>
+						</tags>
+					</to>
+					<container>
+						<ports>8080</ports>
+					</container>
 				</configuration>
 			</plugin>
 		</plugins>
