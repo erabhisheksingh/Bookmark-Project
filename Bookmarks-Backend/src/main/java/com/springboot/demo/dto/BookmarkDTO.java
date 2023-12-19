@@ -12,25 +12,25 @@ import java.util.List;
 @Setter
 public class BookmarkDTO {
 
-    private List<BookmarkProjectionDTO> data;
-    private long totalElements;
-    private int totalPages;
-    private int currentPage;
-    @JsonProperty("isFirst")
-    private boolean isFirst;
-    @JsonProperty("isLast")
-    private boolean isLast;
-    private boolean hasNext;
-    private boolean hasPrev;
+  private List<BookmarkProjectionDTO> data;
+  private long totalElements;
+  private int totalPages;
+  private int currentPage;
+  @JsonProperty("isFirst")
+  private boolean isFirst;
+  @JsonProperty("isLast")
+  private boolean isLast;
+  private boolean hasNext;
+  private boolean hasPrev;
 
-    public BookmarkDTO(Page<BookmarkProjectionDTO> page) {
-        this.data = page.getContent();
-        this.totalElements = page.getTotalElements();
-        this.totalPages = page.getTotalPages();
-        this.currentPage = getCurrentPage() + 1;
-        this.isFirst = page.isFirst();
-        this.isLast = page.isLast();
-        this.hasNext = page.hasNext();
-        this.hasPrev = page.hasPrevious();
-    }
+  public BookmarkDTO(Page<BookmarkProjectionDTO> page) {
+    this.data = page.getContent();
+    this.totalElements = page.getTotalElements();
+    this.totalPages = page.getTotalPages();
+    this.currentPage = getCurrentPage() + 1;
+    this.isFirst = page.isFirst();
+    this.isLast = page.isLast();
+    this.hasNext = page.hasNext();
+    this.hasPrev = page.hasPrevious();
+  }
 }
