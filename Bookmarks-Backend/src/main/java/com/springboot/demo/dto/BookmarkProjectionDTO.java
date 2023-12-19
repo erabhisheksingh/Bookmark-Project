@@ -13,11 +13,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class BookmarkProjectionDTO {
 
-    private Long id;
+  private Long id;
 
-    private String title;
+  private String title;
 
-    private String url;
+  private String url;
 
-    private LocalDateTime createdAt;
+  private LocalDateTime createdAt;
 }
